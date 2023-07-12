@@ -1,9 +1,11 @@
 import uvicorn
 from fastapi import FastAPI, Request
-
+from dotenv import load_dotenv
+import os
 import openai
 
-openai.api_key = "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"
+load_dotenv()
+openai.api_key = os.getenv("OPEN_AI_KEY")
 
 app = FastAPI()
 
